@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
+function Header() {
+  return <h1>Welcome to My React App</h1>;
+}
+function Content() {
+  return <p>This is a simple React application with multiple components.</p>;
+}
+function Footer() {
+  return <footer>©2025 React Experiment 4 - React Components</footer>;
+}
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Content />
+      <Footer />
     </div>
-  );
+    );
 }
-
 export default App;
