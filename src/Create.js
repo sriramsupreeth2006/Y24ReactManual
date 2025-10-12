@@ -1,9 +1,11 @@
 import {useState} from 'react';
+import { useHistory } from 'react-router-dom';
 const Create = () => {
 const [title,setTitle]=useState('hello');
 const [body,setBody]=useState('This is body');
 const [author,setAuthor]=useState('Raju');
 const [isPending,setIsPending]=useState(false);
+const history=useHistory();
 const handleSubmit=(e) => {
 e.preventDefault();
 const blog={title, body, author};
@@ -15,6 +17,8 @@ body: JSON.stringify(blog)
 }).then(() => {
 console.log("New Blog Added");
 setIsPending(false);
+// history.go(-1);
+history.push('/');
 })
 }
 return (
@@ -36,14 +40,13 @@ onChange={(e) => setBody(e.target.value)}
 <label>Blog author:</label>
 <select
 value={author}
-onChange={(e) =>
-setAuthor(e.target.value)}>
+onChange={(e) => setAuthor(e.target.value)}>
 <option value="mario"> mario</option>
 <option value="yoshi"> yoshi</option>
 </select>
 {!isPending && <button>Add Blog</button> }
-{isPending && <button disabled>Adding
-Blog...</button> }
+{isPending && <button disabled>Adding Blog...</
+button> }
 <p>{title}</p>
 <p>{body}</p>
 <p>{author}</p>
