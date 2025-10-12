@@ -1,0 +1,22 @@
+{
+    "blogs": [
+        {
+            "id": 1,
+            "title": "Mirai",
+            "body": "Action Fantasy",
+            "author": "Karthik Ghattamneni"
+        },
+        {
+            "id": 2,
+            "title": "Mission Impossible 8",
+            "body": "Action Spy",
+            "author": "Christopher Mcquarrie"
+        },
+        {
+            "id": 3,
+            "title": "Jathiratnalu",
+            "body": "Comedy",
+            "author": "Anudeep KV"
+        }
+    ]
+}
