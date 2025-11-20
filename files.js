@@ -1,9 +1,9 @@
 const fs = require('fs');
-if(fs.existsSync('./deleteme.txt')){
-fs.unlink('./deleteme.txt',(err) => {
-if (err){
-console.log('err');
-}
-console.log('file deleted');
-})
-}
+const readStream = fs.createReadStream('./blog1.txt',{encoding:'utf8'});
+const writeStream = fs.createWriteStream('./blog2.txt');
+readStream.on('data', (chunk) => {
+console.log('\n... New Chunk...\n')
+console.log(chunk);
+writeStream.write('\n... New Chunk...\n');
+writeStream.write(chunk);
+});
