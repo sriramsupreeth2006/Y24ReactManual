@@ -1,9 +1,7 @@
-const fs = require('fs');
-const readStream = fs.createReadStream('./blog1.txt',{encoding:'utf8'});
-const writeStream = fs.createWriteStream('./blog2.txt');
-readStream.on('data', (chunk) => {
-console.log('\n... New Chunk...\n')
-console.log(chunk);
-writeStream.write('\n... New Chunk...\n');
-writeStream.write(chunk);
+const http = require('http');
+const server= http.createServer((req,res) => {
+console.log('request made')
+})
+server.listen(3000,'localhost', () => {
+console.log('listening for requests on port 3000');
 });
