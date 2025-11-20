@@ -1,7 +1,9 @@
 const fs = require('fs');
-fs.mkdir('./assets',(err) => {
+if(fs.existsSync('./deleteme.txt')){
+fs.unlink('./deleteme.txt',(err) => {
 if (err){
 console.log('err');
 }
-console.log('folder created');
+console.log('file deleted');
 })
+}
